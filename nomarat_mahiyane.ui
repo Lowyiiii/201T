@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>361</width>
+    <height>330</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>100</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="currentText">
+     <string>1396</string>
+    </property>
+    <property name="modelColumn">
+     <number>0</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>1396</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1397</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1398</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1399</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1400</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1401</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>140</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <item>
+     <property name="text">
+      <string>فروردین</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>اردیبهشت</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>خرداد</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>تیر</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>مرداد</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>شهریور</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>مهر</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>آبان</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>آذر</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>دی</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>بهمن</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>اسفند</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>20</y>
+      <width>120</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ثبت نمرات ماهیانه</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>60</y>
+      <width>130</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>  شماره پرسنلی</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>180</y>
+      <width>130</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="placeholderText">
+     <string>             امتیاز</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>250</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ثبت</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>250</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>جدید</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>250</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>خروج</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -13,7 +13,7 @@ class Person(QMainWindow):
         self.personel = sqlite3.connect("201.db")
         self.c = self.personel.cursor()
         self.pushButton_3.clicked.connect(self.enter_data)
-        self.pushButton_5.clicked.connect(self.yegan_window)
+        # self.pushButton_5.clicked.connect(self.yegan_window)
         self.pushButton.clicked.connect(self.pezeshki_window)
         self.radioButton_3.toggled.connect(self.farzand_clicked)
         self.radioButton.toggled.connect(self.vaziyat_clicked)
@@ -22,6 +22,8 @@ class Person(QMainWindow):
         self.radioButton_6.toggled.connect(self.shakhsi_clicked)
         self.radioButton_7.toggled.connect(self.mostajer_clicked)
         self.data = ""
+        self.tahol = ""
+        # self.
 
 
     def enter_data(self):
@@ -38,9 +40,34 @@ class Person(QMainWindow):
         madrak = self.lineEdit_11.text()
         goroohe_khoon = self.lineEdit_12.text()
         ayele = self.lineEdit_18.text()
-        arzyabi96 = self.lineEdit_19.text()
-        arzyabi97 = self.lineEdit_20.text()
-        arzyabi98 = self.lineEdit_21.text()
+        address_qaz = self.lineEdit_22.text()
+        address_other = self.lineEdit_23.text()
+        mobile = self.lineEdit_24.text()
+        home = self.lineEdit_25.text()
+        own_hekmat_num = self.lineEdit_26.text()
+        own_hekmat_card = self.lineEdit_27.text()
+        own_sepah_num = self.lineEdit_28.text()
+        own_sepah_card = self.lineEdit_29.text()
+        wife_hekmat_num = self.lineEdit_30.text()
+        wife_hekmat_card = self.lineEdit_31.text()
+        fname_hamsar = self.lineEdit_13.text()
+        lname_hamsar = self.lineEdit_14.text()
+        shenasname_hamsar = self.lineEdit_15.text()
+        code_meli_hamsar = self.lineEdit_16.text()
+        birthday_hamsar =  self.lineEdit_17.text()
+        daraje = self.lineEdit.text()
+        fname =  self.lineEdit_2.text()
+        lname =  self.lineEdit_3.text()
+        personel_code = self.lineEdit_4.text()
+        shenasname_number = self.lineEdit_5.text()
+        code_meli = self.lineEdit_6.text()
+        father = self.lineEdit_7.text()
+        yegan = self.lineEdit_8.text()
+        shoghle_amali = self.lineEdit_9.text()
+        shoghle_sazmani = self.lineEdit_10.text()
+        madrak = self.lineEdit_11.text()
+        goroohe_khoon = self.lineEdit_12.text()
+        ayele = self.lineEdit_18.text()
         address_qaz = self.lineEdit_22.text()
         address_other = self.lineEdit_23.text()
         mobile = self.lineEdit_24.text()
@@ -61,9 +88,26 @@ class Person(QMainWindow):
         query_personel='''INSERT into personel(daraje,fname,lname,personel_code,shenasname_number,code_meli,
         father,yegan,shoghle_amali,shoghle_sazmani,madrak,gorohe_khoon,ayele,arzyabi96,arzyabi97,arzyabi98,
         address_qaz,address_other,mobile,home,own_hekmat_num,own_hekmat_card,own_sepah_num,own_sepah_card,wife_hekmat_num,wife_hekmat_card,manzel) 
-        values("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}")'''\
+        values("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}")'''\
             .format(daraje,fname,lname,personel_code,shenasname_number,code_meli,father,yegan,shoghle_amali,shoghle_sazmani,madrak,goroohe_khoon,
-                    ayele,arzyabi96,arzyabi97,arzyabi98,address_qaz,address_other,mobile,home,own_hekmat_num,own_hekmat_card,
+                    ayele,address_qaz,address_other,mobile,home,own_hekmat_num,own_hekmat_card,
+                    own_sepah_num,own_sepah_card,wife_hekmat_num,wife_hekmat_card,self.data)
+        self.c.execute(query_personel)
+        self.personel.commit()
+        query_hamsar = '''INSERT into hamsar(personel_code,fname,lname,shenasname_number,code_meli,birthday) 
+        values("{}","{}","{}","{}","{}","{}")'''.format(personel_code,fname_hamsar,lname_hamsar,shenasname_hamsar,code_meli_hamsar,birthday_hamsar)
+        self.c.execute(query_hamsar)
+        self.personel.commit()
+        # self.c.close()
+        # self.personel.close()
+
+
+        query_personel='''INSERT into personel(daraje,fname,lname,personel_code,shenasname_number,code_meli,
+        father,yegan,shoghle_amali,shoghle_sazmani,madrak,gorohe_khoon,ayele,arzyabi96,arzyabi97,arzyabi98,
+        address_qaz,address_other,mobile,home,own_hekmat_num,own_hekmat_card,own_sepah_num,own_sepah_card,wife_hekmat_num,wife_hekmat_card,manzel) 
+        values("{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}","{}")'''\
+            .format(daraje,fname,lname,personel_code,shenasname_number,code_meli,father,yegan,shoghle_amali,shoghle_sazmani,madrak,goroohe_khoon,
+                    ayele,address_qaz,address_other,mobile,home,own_hekmat_num,own_hekmat_card,
                     own_sepah_num,own_sepah_card,wife_hekmat_num,wife_hekmat_card,self.data)
         self.c.execute(query_personel)
         self.personel.commit()
@@ -94,12 +138,13 @@ class Person(QMainWindow):
 
     def vaziyat_clicked(self,enabled):
         if enabled:
+            self.radioButton.setChecked(True)
             self.lineEdit_13.setDisabled(True)
             self.lineEdit_14.setDisabled(True)
             self.lineEdit_15.setDisabled(True)
             self.lineEdit_16.setDisabled(True)
             self.lineEdit_17.setDisabled(True)
-        else:
+        if not enabled:
             self.lineEdit_13.setDisabled(False)
             self.lineEdit_14.setDisabled(False)
             self.lineEdit_15.setDisabled(False)
@@ -111,7 +156,8 @@ class Person(QMainWindow):
             self.radioButton_10.setDisabled(True)
             self.radioButton_11.setDisabled(True)
             self.pushButton.setDisabled(True)
-        else:
+        if not enabled:
+
             self.radioButton_10.setDisabled(False)
             self.radioButton_11.setDisabled(False)
             self.pushButton.setDisabled(False)
@@ -132,7 +178,17 @@ class Person(QMainWindow):
             print(self.data)
             return self.data
 
+    def mojarad_clicked(self,enabled):
+        if enabled:
+            self.data = self.radioButton.text()
+            print(self.data)
+            return self.data
 
+    def moteahel_clicked(self,enabled):
+        if enabled:
+            self.data = self.radioButton_5.text()
+            print(self.data)
+            return self.data
 class Search(QMainWindow):
     def __init__(self):
         super(Search, self).__init__()
@@ -502,21 +558,21 @@ class Personel_search(QMainWindow):
         self.personel_search_info.label_19.setText(shoghle_sazmani)
         self.personel_search_info.label_23.setText(gorohe_khoon)
         self.personel_search_info.label_21.setText(madrak)
-        self.personel_search_info.label_72.setText(ayele)
-        self.personel_search_info.label_74.setText(manzel)
-        self.personel_search_info.label_76.setText(arzyabi96)
-        self.personel_search_info.label_78.setText(arzyabi97)
-        self.personel_search_info.label_80.setText(arzyabi98)
-        self.personel_search_info.label_104.setText(own_hekmat_num)
-        self.personel_search_info.label_110.setText(own_hekmat_card)
-        self.personel_search_info.label_106.setText(own_sepah_num)
-        self.personel_search_info.label_112.setText(own_sepah_card)
-        self.personel_search_info.label_108.setText(wife_hekmat_num)
-        self.personel_search_info.label_114.setText(wife_hekmat_card)
-        self.personel_search_info.label_119.setText(mobile)
-        self.personel_search_info.label_120.setText(home)
-        self.personel_search_info.label_121.setText(address_qaz)
-        self.personel_search_info.label_122.setText(address_other)
+        self.personel_search_info.label_663.setText(ayele)
+        self.personel_search_info.label_664.setText(manzel)
+        self.personel_search_info.label_661.setText(arzyabi96)
+        self.personel_search_info.label_657.setText(arzyabi97)
+        self.personel_search_info.label_660.setText(arzyabi98)
+        self.personel_search_info.label_696.setText(own_hekmat_num)
+        self.personel_search_info.label_705.setText(own_hekmat_card)
+        self.personel_search_info.label_698.setText(own_sepah_num)
+        self.personel_search_info.label_700.setText(own_sepah_card)
+        self.personel_search_info.label_704.setText(wife_hekmat_num)
+        self.personel_search_info.label_703.setText(wife_hekmat_card)
+        self.personel_search_info.label_715.setText(mobile)
+        self.personel_search_info.label_712.setText(home)
+        self.personel_search_info.label_708.setText(address_qaz)
+        self.personel_search_info.label_714.setText(address_other)
 
         self.personel_search_info.display_info()
 
@@ -524,7 +580,7 @@ class Personel_search(QMainWindow):
 class Personel_search_info(QMainWindow):
     def __init__(self):
         super(Personel_search_info, self).__init__()
-        uic.loadUi('personel_search_info.ui',self)
+        uic.loadUi('personel_search_info_scroll.ui',self)
         self.setFixedWidth(800)
         self.setFixedHeight(680)
         # self.show()
